@@ -12,10 +12,10 @@ From your STWorkflow instance, you will have access to several constructor metho
 ```
 self.workflow = [[STWorkflow alloc] init];
     
-STStateSimpleCondition* simpleCondition = [workflow createSimpleConditionNamed:@"simple condition"];
-STStateMultipleCondition* multipleCondition = [workflow createMultipleConditionNamed:@"multiple condition"];
-STStateAsyncAction* asyncAction = [workflow createAsyncActionNamed:@"async action"];
-STStateSyncAction* syncAction = [workflow createSyncActionNamed:@"sync action"];
+STStateSimpleCondition* simpleCondition = [self.workflow createSimpleConditionNamed:@"simple condition"];
+STStateMultipleCondition* multipleCondition = [self.workflow createMultipleConditionNamed:@"multiple condition"];
+STStateAsyncAction* asyncAction = [self.workflow createAsyncActionNamed:@"async action"];
+STStateSyncAction* syncAction = [self.workflow createSyncActionNamed:@"sync action"];
 ```
 
 Once all your states created, you can configure each state. You have to set conditions or actions blocks, and next state(s). furthermore you have to flag each final state. For instance:
