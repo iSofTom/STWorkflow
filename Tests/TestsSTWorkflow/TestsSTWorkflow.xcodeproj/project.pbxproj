@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A59420917AC5DF2005CC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420817AC5DF2005CC678 /* UIKit.framework */; };
+		9A59420B17AC5DF2005CC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420A17AC5DF2005CC678 /* Foundation.framework */; };
+		9A59420D17AC5DF2005CC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */; };
+		9A59421317AC5DF2005CC678 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A59421117AC5DF2005CC678 /* InfoPlist.strings */; };
+		9A59421517AC5DF2005CC678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59421417AC5DF2005CC678 /* main.m */; };
+		9A59421917AC5DF2005CC678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59421817AC5DF2005CC678 /* AppDelegate.m */; };
+		9A59421B17AC5DF2005CC678 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A59421A17AC5DF2005CC678 /* Default.png */; };
+		9A59421D17AC5DF2005CC678 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A59421C17AC5DF2005CC678 /* Default@2x.png */; };
+		9A59421F17AC5DF2005CC678 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A59421E17AC5DF2005CC678 /* Default-568h@2x.png */; };
+		9A59422217AC5DF2005CC678 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59422117AC5DF2005CC678 /* ViewController.m */; };
+		9A59422517AC5DF2005CC678 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A59422317AC5DF2005CC678 /* ViewController.xib */; };
+		9A59422D17AC5DF2005CC678 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59422C17AC5DF2005CC678 /* SenTestingKit.framework */; };
+		9A59422E17AC5DF2005CC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420817AC5DF2005CC678 /* UIKit.framework */; };
+		9A59422F17AC5DF2005CC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420A17AC5DF2005CC678 /* Foundation.framework */; };
+		9A59423717AC5DF2005CC678 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A59423517AC5DF2005CC678 /* InfoPlist.strings */; };
+		9A59423A17AC5DF2005CC678 /* TestsSTWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59423917AC5DF2005CC678 /* TestsSTWorkflowTests.m */; };
+		9A59425417AC5DFE005CC678 /* STState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424517AC5DFE005CC678 /* STState.m */; };
+		9A59425517AC5DFE005CC678 /* STState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424517AC5DFE005CC678 /* STState.m */; };
+		9A59425617AC5DFE005CC678 /* STStateAsyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */; };
+		9A59425717AC5DFE005CC678 /* STStateAsyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */; };
+		9A59425817AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */; };
+		9A59425917AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */; };
+		9A59425A17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */; };
+		9A59425B17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */; };
+		9A59425C17AC5DFE005CC678 /* STStateSyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */; };
+		9A59425D17AC5DFE005CC678 /* STStateSyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */; };
+		9A59425E17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */; };
+		9A59425F17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */; };
+		9A59426017AC5DFE005CC678 /* STWorkflow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425217AC5DFE005CC678 /* STWorkflow.m */; };
+		9A59426117AC5DFE005CC678 /* STWorkflow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425217AC5DFE005CC678 /* STWorkflow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A59423017AC5DF2005CC678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5941FD17AC5DF2005CC678 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A59420417AC5DF2005CC678;
+			remoteInfo = TestsSTWorkflow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A59420517AC5DF2005CC678 /* TestsSTWorkflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestsSTWorkflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A59420817AC5DF2005CC678 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9A59420A17AC5DF2005CC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9A59421017AC5DF2005CC678 /* TestsSTWorkflow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestsSTWorkflow-Info.plist"; sourceTree = "<group>"; };
+		9A59421217AC5DF2005CC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A59421417AC5DF2005CC678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A59421617AC5DF2005CC678 /* TestsSTWorkflow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestsSTWorkflow-Prefix.pch"; sourceTree = "<group>"; };
+		9A59421717AC5DF2005CC678 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A59421817AC5DF2005CC678 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A59421A17AC5DF2005CC678 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9A59421C17AC5DF2005CC678 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9A59421E17AC5DF2005CC678 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9A59422017AC5DF2005CC678 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9A59422117AC5DF2005CC678 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9A59422417AC5DF2005CC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		9A59422B17AC5DF2005CC678 /* TestsSTWorkflowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsSTWorkflowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A59422C17AC5DF2005CC678 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9A59423417AC5DF2005CC678 /* TestsSTWorkflowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestsSTWorkflowTests-Info.plist"; sourceTree = "<group>"; };
+		9A59423617AC5DF2005CC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A59423817AC5DF2005CC678 /* TestsSTWorkflowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsSTWorkflowTests.h; sourceTree = "<group>"; };
+		9A59423917AC5DF2005CC678 /* TestsSTWorkflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestsSTWorkflowTests.m; sourceTree = "<group>"; };
+		9A59424417AC5DFE005CC678 /* STState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STState.h; sourceTree = "<group>"; };
+		9A59424517AC5DFE005CC678 /* STState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STState.m; sourceTree = "<group>"; };
+		9A59424617AC5DFE005CC678 /* STState_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STState_private.h; sourceTree = "<group>"; };
+		9A59424717AC5DFE005CC678 /* STStateAsyncAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateAsyncAction.h; sourceTree = "<group>"; };
+		9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateAsyncAction.m; sourceTree = "<group>"; };
+		9A59424917AC5DFE005CC678 /* STStateMultipleCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateMultipleCondition.h; sourceTree = "<group>"; };
+		9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateMultipleCondition.m; sourceTree = "<group>"; };
+		9A59424B17AC5DFE005CC678 /* STStateSimpleCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateSimpleCondition.h; sourceTree = "<group>"; };
+		9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateSimpleCondition.m; sourceTree = "<group>"; };
+		9A59424D17AC5DFE005CC678 /* STStateSyncAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateSyncAction.h; sourceTree = "<group>"; };
+		9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateSyncAction.m; sourceTree = "<group>"; };
+		9A59424F17AC5DFE005CC678 /* STWorkflow+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STWorkflow+Debug.h"; sourceTree = "<group>"; };
+		9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STWorkflow+Debug.m"; sourceTree = "<group>"; };
+		9A59425117AC5DFE005CC678 /* STWorkflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWorkflow.h; sourceTree = "<group>"; };
+		9A59425217AC5DFE005CC678 /* STWorkflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWorkflow.m; sourceTree = "<group>"; };
+		9A59425317AC5DFE005CC678 /* STWorkflow_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWorkflow_private.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A59420217AC5DF2005CC678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59420917AC5DF2005CC678 /* UIKit.framework in Frameworks */,
+				9A59420B17AC5DF2005CC678 /* Foundation.framework in Frameworks */,
+				9A59420D17AC5DF2005CC678 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A59422717AC5DF2005CC678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59422D17AC5DF2005CC678 /* SenTestingKit.framework in Frameworks */,
+				9A59422E17AC5DF2005CC678 /* UIKit.framework in Frameworks */,
+				9A59422F17AC5DF2005CC678 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A5941FC17AC5DF2005CC678 = {
+			isa = PBXGroup;
+			children = (
+				9A59424317AC5DFE005CC678 /* STWorkflow */,
+				9A59420E17AC5DF2005CC678 /* TestsSTWorkflow */,
+				9A59423217AC5DF2005CC678 /* TestsSTWorkflowTests */,
+				9A59420717AC5DF2005CC678 /* Frameworks */,
+				9A59420617AC5DF2005CC678 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A59420617AC5DF2005CC678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A59420517AC5DF2005CC678 /* TestsSTWorkflow.app */,
+				9A59422B17AC5DF2005CC678 /* TestsSTWorkflowTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A59420717AC5DF2005CC678 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A59420817AC5DF2005CC678 /* UIKit.framework */,
+				9A59420A17AC5DF2005CC678 /* Foundation.framework */,
+				9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */,
+				9A59422C17AC5DF2005CC678 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A59420E17AC5DF2005CC678 /* TestsSTWorkflow */ = {
+			isa = PBXGroup;
+			children = (
+				9A59421717AC5DF2005CC678 /* AppDelegate.h */,
+				9A59421817AC5DF2005CC678 /* AppDelegate.m */,
+				9A59422017AC5DF2005CC678 /* ViewController.h */,
+				9A59422117AC5DF2005CC678 /* ViewController.m */,
+				9A59422317AC5DF2005CC678 /* ViewController.xib */,
+				9A59420F17AC5DF2005CC678 /* Supporting Files */,
+			);
+			path = TestsSTWorkflow;
+			sourceTree = "<group>";
+		};
+		9A59420F17AC5DF2005CC678 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A59421017AC5DF2005CC678 /* TestsSTWorkflow-Info.plist */,
+				9A59421117AC5DF2005CC678 /* InfoPlist.strings */,
+				9A59421417AC5DF2005CC678 /* main.m */,
+				9A59421617AC5DF2005CC678 /* TestsSTWorkflow-Prefix.pch */,
+				9A59421A17AC5DF2005CC678 /* Default.png */,
+				9A59421C17AC5DF2005CC678 /* Default@2x.png */,
+				9A59421E17AC5DF2005CC678 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A59423217AC5DF2005CC678 /* TestsSTWorkflowTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A59423817AC5DF2005CC678 /* TestsSTWorkflowTests.h */,
+				9A59423917AC5DF2005CC678 /* TestsSTWorkflowTests.m */,
+				9A59423317AC5DF2005CC678 /* Supporting Files */,
+			);
+			path = TestsSTWorkflowTests;
+			sourceTree = "<group>";
+		};
+		9A59423317AC5DF2005CC678 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A59423417AC5DF2005CC678 /* TestsSTWorkflowTests-Info.plist */,
+				9A59423517AC5DF2005CC678 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A59424317AC5DFE005CC678 /* STWorkflow */ = {
+			isa = PBXGroup;
+			children = (
+				9A59424417AC5DFE005CC678 /* STState.h */,
+				9A59424517AC5DFE005CC678 /* STState.m */,
+				9A59424617AC5DFE005CC678 /* STState_private.h */,
+				9A59424717AC5DFE005CC678 /* STStateAsyncAction.h */,
+				9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */,
+				9A59424917AC5DFE005CC678 /* STStateMultipleCondition.h */,
+				9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */,
+				9A59424B17AC5DFE005CC678 /* STStateSimpleCondition.h */,
+				9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */,
+				9A59424D17AC5DFE005CC678 /* STStateSyncAction.h */,
+				9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */,
+				9A59424F17AC5DFE005CC678 /* STWorkflow+Debug.h */,
+				9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */,
+				9A59425117AC5DFE005CC678 /* STWorkflow.h */,
+				9A59425217AC5DFE005CC678 /* STWorkflow.m */,
+				9A59425317AC5DFE005CC678 /* STWorkflow_private.h */,
+			);
+			name = STWorkflow;
+			path = ../../STWorkflow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A59420417AC5DF2005CC678 /* TestsSTWorkflow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A59423D17AC5DF2005CC678 /* Build configuration list for PBXNativeTarget "TestsSTWorkflow" */;
+			buildPhases = (
+				9A59420117AC5DF2005CC678 /* Sources */,
+				9A59420217AC5DF2005CC678 /* Frameworks */,
+				9A59420317AC5DF2005CC678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestsSTWorkflow;
+			productName = TestsSTWorkflow;
+			productReference = 9A59420517AC5DF2005CC678 /* TestsSTWorkflow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A59422A17AC5DF2005CC678 /* TestsSTWorkflowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A59424017AC5DF2005CC678 /* Build configuration list for PBXNativeTarget "TestsSTWorkflowTests" */;
+			buildPhases = (
+				9A59422617AC5DF2005CC678 /* Sources */,
+				9A59422717AC5DF2005CC678 /* Frameworks */,
+				9A59422817AC5DF2005CC678 /* Resources */,
+				9A59422917AC5DF2005CC678 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A59423117AC5DF2005CC678 /* PBXTargetDependency */,
+			);
+			name = TestsSTWorkflowTests;
+			productName = TestsSTWorkflowTests;
+			productReference = 9A59422B17AC5DF2005CC678 /* TestsSTWorkflowTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A5941FD17AC5DF2005CC678 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = iSofTom;
+			};
+			buildConfigurationList = 9A59420017AC5DF2005CC678 /* Build configuration list for PBXProject "TestsSTWorkflow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9A5941FC17AC5DF2005CC678;
+			productRefGroup = 9A59420617AC5DF2005CC678 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A59420417AC5DF2005CC678 /* TestsSTWorkflow */,
+				9A59422A17AC5DF2005CC678 /* TestsSTWorkflowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A59420317AC5DF2005CC678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59421317AC5DF2005CC678 /* InfoPlist.strings in Resources */,
+				9A59421B17AC5DF2005CC678 /* Default.png in Resources */,
+				9A59421D17AC5DF2005CC678 /* Default@2x.png in Resources */,
+				9A59421F17AC5DF2005CC678 /* Default-568h@2x.png in Resources */,
+				9A59422517AC5DF2005CC678 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A59422817AC5DF2005CC678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59423717AC5DF2005CC678 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A59422917AC5DF2005CC678 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A59420117AC5DF2005CC678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59421517AC5DF2005CC678 /* main.m in Sources */,
+				9A59421917AC5DF2005CC678 /* AppDelegate.m in Sources */,
+				9A59422217AC5DF2005CC678 /* ViewController.m in Sources */,
+				9A59425417AC5DFE005CC678 /* STState.m in Sources */,
+				9A59425617AC5DFE005CC678 /* STStateAsyncAction.m in Sources */,
+				9A59425817AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */,
+				9A59425A17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */,
+				9A59425C17AC5DFE005CC678 /* STStateSyncAction.m in Sources */,
+				9A59425E17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */,
+				9A59426017AC5DFE005CC678 /* STWorkflow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A59422617AC5DF2005CC678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A59423A17AC5DF2005CC678 /* TestsSTWorkflowTests.m in Sources */,
+				9A59425517AC5DFE005CC678 /* STState.m in Sources */,
+				9A59425717AC5DFE005CC678 /* STStateAsyncAction.m in Sources */,
+				9A59425917AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */,
+				9A59425B17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */,
+				9A59425D17AC5DFE005CC678 /* STStateSyncAction.m in Sources */,
+				9A59425F17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */,
+				9A59426117AC5DFE005CC678 /* STWorkflow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A59423117AC5DF2005CC678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A59420417AC5DF2005CC678 /* TestsSTWorkflow */;
+			targetProxy = 9A59423017AC5DF2005CC678 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A59421117AC5DF2005CC678 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A59421217AC5DF2005CC678 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9A59422317AC5DF2005CC678 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A59422417AC5DF2005CC678 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		9A59423517AC5DF2005CC678 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A59423617AC5DF2005CC678 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A59423B17AC5DF2005CC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A59423C17AC5DF2005CC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A59423E17AC5DF2005CC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestsSTWorkflow/TestsSTWorkflow-Prefix.pch";
+				INFOPLIST_FILE = "TestsSTWorkflow/TestsSTWorkflow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9A59423F17AC5DF2005CC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestsSTWorkflow/TestsSTWorkflow-Prefix.pch";
+				INFOPLIST_FILE = "TestsSTWorkflow/TestsSTWorkflow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9A59424117AC5DF2005CC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestsSTWorkflow.app/TestsSTWorkflow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestsSTWorkflow/TestsSTWorkflow-Prefix.pch";
+				INFOPLIST_FILE = "TestsSTWorkflowTests/TestsSTWorkflowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9A59424217AC5DF2005CC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestsSTWorkflow.app/TestsSTWorkflow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestsSTWorkflow/TestsSTWorkflow-Prefix.pch";
+				INFOPLIST_FILE = "TestsSTWorkflowTests/TestsSTWorkflowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A59420017AC5DF2005CC678 /* Build configuration list for PBXProject "TestsSTWorkflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A59423B17AC5DF2005CC678 /* Debug */,
+				9A59423C17AC5DF2005CC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A59423D17AC5DF2005CC678 /* Build configuration list for PBXNativeTarget "TestsSTWorkflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A59423E17AC5DF2005CC678 /* Debug */,
+				9A59423F17AC5DF2005CC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A59424017AC5DF2005CC678 /* Build configuration list for PBXNativeTarget "TestsSTWorkflowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A59424117AC5DF2005CC678 /* Debug */,
+				9A59424217AC5DF2005CC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A5941FD17AC5DF2005CC678 /* Project object */;
+}
