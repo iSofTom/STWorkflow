@@ -36,8 +36,23 @@ typedef void(^STStateAsyncActionBlock)(STStateAsyncAction* currentAction);
 
 @interface STStateAsyncAction : STState
 
+/**
+ *	Set the action block of the state.
+ *  You'll have to call the resume method on the state in parameters once your async action is done
+ *  in order to let the workflow know it can continue on the next state.
+ *
+ *	@param	action	The block that will be executed.
+ */
 - (void)setAction:(STStateAsyncActionBlock)action;
+
+/**
+ *  The state the workflow will continue on once the resume method is called.
+ */
 @property (nonatomic, weak) STState* nextState;
+
+/**
+ *  You should call this method to let the workflow know it can continue on the next state.
+ */
 - (void)resume;
 
 @end

@@ -34,8 +34,22 @@ typedef BOOL(^STStateSimpleConditionBlock)(void);
 
 @interface STStateSimpleCondition : STState
 
+/**
+ *	Set the condition block of the state.
+ *  If the block's result is YES, the workflow will continue on the success state, otherwise on the failure state.
+ *
+ *	@param	condition	the block that will be executed to choose the next state.
+ */
 - (void)setCondition:(STStateSimpleConditionBlock)condition;
+
+/**
+ *	The state the workflow will continue on if the condition's result is YES.
+ */
 @property (nonatomic, weak) STState* successState;
+
+/**
+ *	The state the workflow will continue on if the condition's result is NO.
+ */
 @property (nonatomic, weak) STState* failureState;
 
 @end

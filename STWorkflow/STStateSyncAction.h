@@ -34,7 +34,17 @@ typedef void(^STStateSyncActionBlock)(void);
 
 @interface STStateSyncAction : STState
 
+/**
+ *	Set the action block of the state.
+ *  Once the block executed, the workflow will continue on the next state.
+ *
+ *	@param	action	A block that will be executed.
+ */
 - (void)setAction:(STStateSyncActionBlock)action;
+
+/**
+ *	Set the next state the worflow will continue on as soon as the action block is executed.
+ */
 @property (nonatomic, weak) STState* nextState;
 
 @end

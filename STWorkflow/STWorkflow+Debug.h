@@ -33,18 +33,68 @@
 
 @interface STWorkflow (Debug)
 
+/**
+ *	Return the name of the current state.
+ *
+ *	@return	The name of the current state.
+ */
 - (NSString*)currentStateName;
+
+/**
+ *	Return the first state of the workflow.
+ *
+ *	@return	The first state of the workflow.
+ */
 - (STState*)startState;
+
+/**
+ *	Return the first state named as the string in parameters.
+ *
+ *	@param	name	the name you're looking for.
+ *
+ *	@return	The state named as the string in parameters.
+ */
 - (STState*)stateNamed:(NSString*)name;
 
 @end
 
 @interface STState (Debug)
 
+/**
+ *	Return a boolean that indicate if the current state is named as the string in parameters.
+ *
+ *	@param	name	The name you're checking.
+ *
+ *	@return	A boolean that indicate if the current's name is the same as the one in parameters.
+ */
 - (BOOL)isNamed:(NSString*)name;
+
+/**
+ *	Return a boolean that indicate if the current state is a STStateSimpleCondition.
+ *
+ *	@return	A boolean that indicate if the current state is a STStateSimpleCondition.
+ */
 - (BOOL)isSimpleCondition;
+
+/**
+ *	Return a boolean that indicate if the current state is a STStateMultipleCondition.
+ *
+ *	@return	A boolean that indicate if the current state is a STStateMultipleCondition.
+ */
 - (BOOL)isMultipleCondition;
+
+/**
+ *	Return a boolean that indicate if the current state is a STStateSyncAction.
+ *
+ *	@return	A boolean that indicate if the current state is a STStateSyncAction.
+ */
 - (BOOL)isSyncAction;
+
+/**
+ *	Return a boolean that indicate if the current state is a STStateAsyncAction.
+ *
+ *	@return	A boolean that indicate if the current state is a STStateAsyncAction.
+ */
 - (BOOL)isAsyncAction;
 
 @end

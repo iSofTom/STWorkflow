@@ -32,6 +32,10 @@
 
 @interface STState : NSObject
 
+/**
+ *	Flag the state as a final state.
+ *  A state that doesn't lead to another one should be flag as final, otherwise an exception will be raise.
+ */
 - (void)flagAsFinalState;
 
 @end

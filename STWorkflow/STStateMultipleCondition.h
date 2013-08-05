@@ -34,7 +34,20 @@ typedef NSString*(^STStateMultipleConditionBlock)(void);
 
 @interface STStateMultipleCondition : STState
 
+/**
+ *	Set the condition block of the state.
+ *  The block should return a key, an NSString, that will be used to retrieve the next state.
+ *
+ *	@param	condition	the block that will be executed to choose the next state.
+ */
 - (void)setCondition:(STStateMultipleConditionBlock)condition;
+
+/**
+ *	Associate a potential next state to a key.
+ *
+ *	@param	state	The state the workflow will continue on if the condition returns the key in parameters.
+ *	@param	key	The key the condition should return in order to choose the state in parameters.
+ */
 - (void)setNextState:(STState*)state forKey:(NSString*)key;
 
 @end
