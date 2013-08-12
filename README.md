@@ -96,4 +96,9 @@ N- An other check (SC)
 ```
 
 After each state, it's type is indicated with two letters (SC: Simple Condition, MC: Multiple Condition, SA: Synchronous Action, AA: Asynchronous Action).
-A exclamation point indicate a final state and an asterisk indicate a state that have already been logged previously (to prevent cycles).
+An exclamation point indicate a final state and an asterisk indicate a state that have already been logged previously (to prevent cycles).
+
+## Installation
+
+To include this component in your project, I recommend you to use [Cocoapods](http://cocoapods.org):
+* Add `pod "STWorkflow"` to your Podfile.
