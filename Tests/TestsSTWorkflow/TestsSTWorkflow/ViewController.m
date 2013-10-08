@@ -52,12 +52,12 @@
     STWorkflow* workflow = [[STWorkflow alloc] init];
     
     STStateSimpleCondition* firstLaunch = [workflow createSimpleConditionNamed:@"Check First launch"];
-    STStateAsyncAction* downloadConf = [workflow createAsyncActionNamed:@"Download Config"];
+    STStateAction* downloadConf = [workflow createActionNamed:@"Download Config"];
     STStateMultipleCondition* condition = [workflow createMultipleConditionNamed:@"Condition"];
-    STStateSyncAction* action1 = [workflow createSyncActionNamed:@"Action 1"];
-    STStateSyncAction* action2 = [workflow createSyncActionNamed:@"Action 2"];
-    STStateSyncAction* action3 = [workflow createSyncActionNamed:@"Action 3"];
-    STStateSyncAction* finalState = [workflow createSyncActionNamed:@"Final state"];
+    STStateAction* action1 = [workflow createActionNamed:@"Action 1"];
+    STStateAction* action2 = [workflow createActionNamed:@"Action 2"];
+    STStateAction* action3 = [workflow createActionNamed:@"Action 3"];
+    STStateAction* finalState = [workflow createActionNamed:@"Final state"];
     
     // Check First launch
     [firstLaunch setCondition:^BOOL{
@@ -68,7 +68,7 @@
     [firstLaunch setFailureState:condition];
     
     // Download config
-    [downloadConf setAction:^(STStateAsyncAction *currentAction) {
+    [downloadConf setAsyncAction:^(STStateAction *currentAction) {
         [self.asyncLabel setTextColor:[UIColor blueColor]];
         [self downloadWithCompletion:^{
             [self.asyncLabel setTextColor:[UIColor redColor]];

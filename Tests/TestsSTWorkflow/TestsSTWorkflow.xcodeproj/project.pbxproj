@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4411D718044A42004EF15A /* STStateDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411D618044A42004EF15A /* STStateDispatch.m */; };
+		9A4411DB18044B99004EF15A /* STStateAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411DA18044B99004EF15A /* STStateAction.m */; };
 		9A59420917AC5DF2005CC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420817AC5DF2005CC678 /* UIKit.framework */; };
 		9A59420B17AC5DF2005CC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420A17AC5DF2005CC678 /* Foundation.framework */; };
 		9A59420D17AC5DF2005CC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */; };
@@ -25,14 +27,10 @@
 		9A59423A17AC5DF2005CC678 /* TestsSTWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59423917AC5DF2005CC678 /* TestsSTWorkflowTests.m */; };
 		9A59425417AC5DFE005CC678 /* STState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424517AC5DFE005CC678 /* STState.m */; };
 		9A59425517AC5DFE005CC678 /* STState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424517AC5DFE005CC678 /* STState.m */; };
-		9A59425617AC5DFE005CC678 /* STStateAsyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */; };
-		9A59425717AC5DFE005CC678 /* STStateAsyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */; };
 		9A59425817AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */; };
 		9A59425917AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */; };
 		9A59425A17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */; };
 		9A59425B17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */; };
-		9A59425C17AC5DFE005CC678 /* STStateSyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */; };
-		9A59425D17AC5DFE005CC678 /* STStateSyncAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */; };
 		9A59425E17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */; };
 		9A59425F17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */; };
 		9A59426017AC5DFE005CC678 /* STWorkflow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59425217AC5DFE005CC678 /* STWorkflow.m */; };
@@ -50,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4411D518044A42004EF15A /* STStateDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateDispatch.h; sourceTree = "<group>"; };
+		9A4411D618044A42004EF15A /* STStateDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateDispatch.m; sourceTree = "<group>"; };
+		9A4411D818044A5E004EF15A /* STStateContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STStateContainer.h; sourceTree = "<group>"; };
+		9A4411D918044B99004EF15A /* STStateAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateAction.h; sourceTree = "<group>"; };
+		9A4411DA18044B99004EF15A /* STStateAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateAction.m; sourceTree = "<group>"; };
+		9A4411DC1804541E004EF15A /* STStateFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STStateFactory.h; sourceTree = "<group>"; };
 		9A59420517AC5DF2005CC678 /* TestsSTWorkflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestsSTWorkflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59420817AC5DF2005CC678 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A59420A17AC5DF2005CC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,19 +79,14 @@
 		9A59424417AC5DFE005CC678 /* STState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STState.h; sourceTree = "<group>"; };
 		9A59424517AC5DFE005CC678 /* STState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STState.m; sourceTree = "<group>"; };
 		9A59424617AC5DFE005CC678 /* STState_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STState_private.h; sourceTree = "<group>"; };
-		9A59424717AC5DFE005CC678 /* STStateAsyncAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateAsyncAction.h; sourceTree = "<group>"; };
-		9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateAsyncAction.m; sourceTree = "<group>"; };
 		9A59424917AC5DFE005CC678 /* STStateMultipleCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateMultipleCondition.h; sourceTree = "<group>"; };
 		9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateMultipleCondition.m; sourceTree = "<group>"; };
 		9A59424B17AC5DFE005CC678 /* STStateSimpleCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateSimpleCondition.h; sourceTree = "<group>"; };
 		9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateSimpleCondition.m; sourceTree = "<group>"; };
-		9A59424D17AC5DFE005CC678 /* STStateSyncAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateSyncAction.h; sourceTree = "<group>"; };
-		9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateSyncAction.m; sourceTree = "<group>"; };
 		9A59424F17AC5DFE005CC678 /* STWorkflow+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STWorkflow+Debug.h"; sourceTree = "<group>"; };
 		9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STWorkflow+Debug.m"; sourceTree = "<group>"; };
 		9A59425117AC5DFE005CC678 /* STWorkflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWorkflow.h; sourceTree = "<group>"; };
 		9A59425217AC5DFE005CC678 /* STWorkflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWorkflow.m; sourceTree = "<group>"; };
-		9A59425317AC5DFE005CC678 /* STWorkflow_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWorkflow_private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,22 +193,23 @@
 		9A59424317AC5DFE005CC678 /* STWorkflow */ = {
 			isa = PBXGroup;
 			children = (
+				9A59425117AC5DFE005CC678 /* STWorkflow.h */,
+				9A59425217AC5DFE005CC678 /* STWorkflow.m */,
+				9A4411DC1804541E004EF15A /* STStateFactory.h */,
+				9A4411D818044A5E004EF15A /* STStateContainer.h */,
 				9A59424417AC5DFE005CC678 /* STState.h */,
 				9A59424517AC5DFE005CC678 /* STState.m */,
 				9A59424617AC5DFE005CC678 /* STState_private.h */,
-				9A59424717AC5DFE005CC678 /* STStateAsyncAction.h */,
-				9A59424817AC5DFE005CC678 /* STStateAsyncAction.m */,
-				9A59424917AC5DFE005CC678 /* STStateMultipleCondition.h */,
-				9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */,
 				9A59424B17AC5DFE005CC678 /* STStateSimpleCondition.h */,
 				9A59424C17AC5DFE005CC678 /* STStateSimpleCondition.m */,
-				9A59424D17AC5DFE005CC678 /* STStateSyncAction.h */,
-				9A59424E17AC5DFE005CC678 /* STStateSyncAction.m */,
+				9A59424917AC5DFE005CC678 /* STStateMultipleCondition.h */,
+				9A59424A17AC5DFE005CC678 /* STStateMultipleCondition.m */,
+				9A4411D918044B99004EF15A /* STStateAction.h */,
+				9A4411DA18044B99004EF15A /* STStateAction.m */,
+				9A4411D518044A42004EF15A /* STStateDispatch.h */,
+				9A4411D618044A42004EF15A /* STStateDispatch.m */,
 				9A59424F17AC5DFE005CC678 /* STWorkflow+Debug.h */,
 				9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */,
-				9A59425117AC5DFE005CC678 /* STWorkflow.h */,
-				9A59425217AC5DFE005CC678 /* STWorkflow.m */,
-				9A59425317AC5DFE005CC678 /* STWorkflow_private.h */,
 			);
 			name = STWorkflow;
 			path = ../../STWorkflow;
@@ -329,10 +329,10 @@
 				9A59421917AC5DF2005CC678 /* AppDelegate.m in Sources */,
 				9A59422217AC5DF2005CC678 /* ViewController.m in Sources */,
 				9A59425417AC5DFE005CC678 /* STState.m in Sources */,
-				9A59425617AC5DFE005CC678 /* STStateAsyncAction.m in Sources */,
+				9A4411DB18044B99004EF15A /* STStateAction.m in Sources */,
 				9A59425817AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */,
+				9A4411D718044A42004EF15A /* STStateDispatch.m in Sources */,
 				9A59425A17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */,
-				9A59425C17AC5DFE005CC678 /* STStateSyncAction.m in Sources */,
 				9A59425E17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */,
 				9A59426017AC5DFE005CC678 /* STWorkflow.m in Sources */,
 			);
@@ -344,10 +344,8 @@
 			files = (
 				9A59423A17AC5DF2005CC678 /* TestsSTWorkflowTests.m in Sources */,
 				9A59425517AC5DFE005CC678 /* STState.m in Sources */,
-				9A59425717AC5DFE005CC678 /* STStateAsyncAction.m in Sources */,
 				9A59425917AC5DFE005CC678 /* STStateMultipleCondition.m in Sources */,
 				9A59425B17AC5DFE005CC678 /* STStateSimpleCondition.m in Sources */,
-				9A59425D17AC5DFE005CC678 /* STStateSyncAction.m in Sources */,
 				9A59425F17AC5DFE005CC678 /* STWorkflow+Debug.m in Sources */,
 				9A59426117AC5DFE005CC678 /* STWorkflow.m in Sources */,
 			);
@@ -522,6 +520,7 @@
 				9A59423F17AC5DF2005CC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A59424017AC5DF2005CC678 /* Build configuration list for PBXNativeTarget "TestsSTWorkflowTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +529,7 @@
 				9A59424217AC5DF2005CC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

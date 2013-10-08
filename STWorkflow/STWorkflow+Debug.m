@@ -69,14 +69,14 @@
     return [self isKindOfClass:[STStateMultipleCondition class]];
 }
 
-- (BOOL)isSyncAction
+- (BOOL)isAction
 {
-    return [self isKindOfClass:[STStateSyncAction class]];
+    return [self isKindOfClass:[STStateAction class]];
 }
 
-- (BOOL)isAsyncAction
+- (BOOL)isDispatch
 {
-    return [self isKindOfClass:[STStateAsyncAction class]];
+    return [self isKindOfClass:[STStateDispatch class]];
 }
 
 @end

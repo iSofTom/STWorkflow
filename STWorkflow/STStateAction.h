@@ -1,8 +1,8 @@
 //
-//  STStateSyncAction.h
+//  STStateAction.h
 //  STWorkflow
 //
-//  Created by Thomas Dupont on 02/08/13.
+//  Created by Thomas Dupont on 08/10/13.
 
 /***********************************************************************************
  *
@@ -30,9 +30,12 @@
 
 #import "STState.h"
 
-typedef void(^STStateSyncActionBlock)(void);
+@class STStateAction;
 
-@interface STStateSyncAction : STState
+typedef void(^STStateActionBlock)(void);
+typedef void(^STStateActionAsyncBlock)(STStateAction* currentAction);
+
+@interface STStateAction : STState
 
 /**
  *	Set the action block of the state.
@@ -40,11 +43,30 @@ typedef void(^STStateSyncActionBlock)(void);
  *
  *	@param	action	A block that will be executed.
  */
-- (void)setAction:(STStateSyncActionBlock)action;
+@property (nonatomic, copy) STStateActionBlock action;
+- (void)setAction:(STStateActionBlock)action;
 
 /**
- *	Set the next state the worflow will continue on as soon as the action block is executed.
+ *	Set the action block of the state.
+ *  You have to call the resume method on the state in parameters as soon as your async action is done
+ *
+ *  @see resume
+ *
+ *	@param	asyncAction	A block that will be executed.
+ */
+@property (nonatomic, copy) STStateActionAsyncBlock asyncAction;
+- (void)setAsyncAction:(STStateActionAsyncBlock)asyncAction;
+
+/**
+ *  The state the workflow will continue on once the action is done.
  */
 @property (nonatomic, weak) STState* nextState;
+
+/**
+ *  You should call this method to let the workflow know it can continue on the next state.
+ *
+ *  @see setAsyncAction:
+ */
+- (void)resume;
 
 @end

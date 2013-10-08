@@ -30,7 +30,10 @@
 
 #import "STState.h"
 
+@class STStateMultipleCondition;
+
 typedef NSString*(^STStateMultipleConditionBlock)(void);
+typedef void(^STStateMultipleConditionAsyncBlock)(STStateMultipleCondition*);
 
 @interface STStateMultipleCondition : STState
 
@@ -40,7 +43,28 @@ typedef NSString*(^STStateMultipleConditionBlock)(void);
  *
  *	@param	condition	the block that will be executed to choose the next state.
  */
+@property (nonatomic, copy) STStateMultipleConditionBlock condition;
 - (void)setCondition:(STStateMultipleConditionBlock)condition;
+
+/**
+ *	Set the condition block of the state.
+ *  You have to call the resumeWithKey method, on the state in parameter, as soon as your async operation is done.
+ *
+ *  @see resumeWithKey:
+ *
+ *	@param	condition	the block that will be executed to choose the next state.
+ */
+@property (nonatomic, copy) STStateMultipleConditionAsyncBlock asyncCondition;
+- (void)setAsyncCondition:(STStateMultipleConditionAsyncBlock)asyncCondition;
+
+/**
+ *  You have to call this method if have set an async condition as soon as that async operation is done.
+ *
+ *  @see setAsyncCondition:
+ *
+ *  @param key  the key that will be used to retrieve the next state
+ */
+- (void)resumeWithKey:(NSString*)key;
 
 /**
  *	Associate a potential next state to a key.

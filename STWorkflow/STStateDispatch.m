@@ -1,8 +1,8 @@
 //
-//  STWorkflow.m
+//  STStateDispatch.m
 //  STWorkflow
 //
-//  Created by Thomas Dupont on 02/08/13.
+//  Created by Thomas Dupont on 08/10/13.
 
 /***********************************************************************************
  *
@@ -28,59 +28,31 @@
  *
  ***********************************************************************************/
 
-#import "STWorkflow.h"
-
+#import "STStateDispatch.h"
 #import "STState_private.h"
 #import "STStateContainer.h"
 
-@interface STWorkflow () <STStateContainer>
+#import "STStateSimpleCondition.h"
+#import "STStateMultipleCondition.h"
+#import "STStateAction.h"
 
-@property (nonatomic, strong) NSMutableSet* states;
-@property (nonatomic, strong) STState* firstState;
-@property (nonatomic, strong) STState* currentState;
-@property (nonatomic, assign) BOOL running;
-@property (nonatomic, strong) NSMutableSet* describedStates;
+@interface STStateDispatch () <STStateContainer>
+
+@property (nonatomic, strong) NSMutableArray* states;
+@property (nonatomic, assign) NSInteger numberOfFinalStateReached;
 
 @end
 
-@implementation STWorkflow
+@implementation STStateDispatch
 
 - (id)init
 {
     self = [super init];
     if (self)
     {
-        self.states = [[NSMutableSet alloc] init];
+        self.states = [[NSMutableArray alloc] init];
     }
     return self;
-}
-
-#pragma mark - Public methods
-
-- (void)start
-{
-    if (!self.running)
-    {
-        self.running = YES;
-        [self execute:self.firstState];
-    }
-}
-
-- (void)pause
-{
-    if (self.running)
-    {
-        self.running = NO;
-    }
-}
-
-- (void)resume
-{
-    if (!self.running && self.currentState)
-    {
-        self.running = YES;
-        [self execute:self.currentState];
-    }
 }
 
 #pragma mark - Factory
@@ -122,48 +94,104 @@
         [NSException raise:@"STWorkflowException" format:@"Try to execute a nil state"];
     }
     
-    self.currentState = state;
-    if (self.running)
+    [state execute];
+}
+
+- (void)finalStateReached
+{
+    self.numberOfFinalStateReached++;
+    
+    if ([self.states count] == self.numberOfFinalStateReached)
+    {
+        [self executeNextState];
+    }
+}
+
+- (BOOL)shouldDescribeNextStatesOfState:(STState*)state
+{
+    return [self.container shouldDescribeNextStatesOfState:state];
+}
+
+#pragma mark - STState
+
+- (void)execute
+{
+    self.numberOfFinalStateReached = 0;
+    
+    if ([self.states count] == 0)
+    {
+        [self executeNextState];
+    }
+    
+    for (STState* state in self.states)
     {
         [state execute];
     }
 }
 
-- (void)finalStateReached
+- (STState*)stateNamed:(NSString*)name
 {
-    self.currentState = nil;
-    self.running = NO;
+    if ([self.name isEqualToString:name])
+    {
+        return self;
+    }
+    else
+    {
+        STState* state = nil;
+        for (STState* s in self.states)
+        {
+            state = [s stateNamed:name];
+            if (state)
+            {
+                break;
+            }
+        }
+        return state;
+    }
 }
 
-- (BOOL)shouldDescribeNextStatesOfState:(STState*)state
+- (NSString*)descriptionWithShift:(NSString*)shift prefix:(NSString*)prefix siblingPrefix:(NSString*)siblingPrefix
 {
-    BOOL contains = [self.describedStates containsObject:state];
-    [self.describedStates addObject:state];
-    return !contains;
+    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (D)", shift, prefix, self.name];
+    
+    if (!self.isFinalState && [self.container shouldDescribeNextStatesOfState:self])
+    {
+        [string appendString:@"\n"];
+        [string appendString:[self.nextState descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"|- " siblingPrefix:@"|  "]?:@""];
+    }
+    else
+    {
+        if (self.isFinalState)
+        {
+            [string appendString:@" !\n"];
+        }
+        else
+        {
+            [string appendString:@" *\n"];
+        }
+    }
+    
+    return string;
 }
 
-#pragma mark - Private methods
+#pragma mark - Private
 
 - (void)addState:(STState*)state
 {
-    if (!self.firstState)
-    {
-        self.firstState = state;
-    }
-    
     [state setContainer:self];
     [self.states addObject:state];
 }
 
-- (NSString *)description
+- (void)executeNextState
 {
-    self.describedStates = [[NSMutableSet alloc] init];
-    
-    NSString* string = [NSString stringWithFormat:@"\n%@",[self.firstState descriptionWithShift:@"" prefix:@"" siblingPrefix:@""]];
-    
-    self.describedStates = nil;
-    
-    return string;
+    if (self.isFinalState)
+    {
+        [self.container finalStateReached];
+    }
+    else
+    {
+        [self.container execute:self.nextState];
+    }
 }
 
 @end

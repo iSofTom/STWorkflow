@@ -30,15 +30,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "STStateFactory.h"
 #import "STStateSimpleCondition.h"
 #import "STStateMultipleCondition.h"
-#import "STStateSyncAction.h"
-#import "STStateAsyncAction.h"
+#import "STStateAction.h"
+#import "STStateDispatch.h"
 
 /**
  *	STWorkflow represents a worflow, with multiple states and relations between them.
  */
-@interface STWorkflow : NSObject
+@interface STWorkflow : NSObject <STStateFactory>
 
 /**
  *	Starts a workflow.
@@ -58,45 +59,5 @@
  *  If it hasn't previously been paused on a state, does nothing.
  */
 - (void)resume;
-
-/**
- *	Create a simple condition state and add it to the current workflow.
- *  @see STStateSimpleCondition
- *
- *	@param	name	the name of the state. Useful for logging and testing, but also for readability.
- *
- *	@return	return the simple condition state.
- */
-- (STStateSimpleCondition*)createSimpleConditionNamed:(NSString*)name;
-
-/**
- *	Create a multiple condition state and add it to the current workflow.
- *  @see STStateMultipleCondition
- *
- *	@param	name	the name of the state. Useful for logging and testing, but also for readability.
- *
- *	@return	return the multiple condition state.
- */
-- (STStateMultipleCondition*)createMultipleConditionNamed:(NSString*)name;
-
-/**
- *	Create an asynchronous action state and add it to the current workflow.
- *  @see STStateAsyncAction
- *
- *	@param	name	the name of the state. Useful for logging and testing, but also for readability.
- *
- *	@return	return the asynchronous action state.
- */
-- (STStateAsyncAction*)createAsyncActionNamed:(NSString*)name;
-
-/**
- *	Create a synchronous action state and add it to the current workflow.
- *  @see STStateSyncAction
- *
- *	@param	name	the name of the state. Useful for logging and testing, but also for readability.
- *
- *	@return	return the synchronous action state.
- */
-- (STStateSyncAction*)createSyncActionNamed:(NSString*)name;
 
 @end

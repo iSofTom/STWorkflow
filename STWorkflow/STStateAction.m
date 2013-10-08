@@ -1,8 +1,8 @@
 //
-//  STStateAsyncAction.m
+//  STStateAction.m
 //  STWorkflow
 //
-//  Created by Thomas Dupont on 02/08/13.
+//  Created by Thomas Dupont on 08/10/13.
 
 /***********************************************************************************
  *
@@ -28,39 +28,41 @@
  *
  ***********************************************************************************/
 
-#import "STStateAsyncAction.h"
+#import "STStateAction.h"
 #import "STState_private.h"
 
-@interface STStateAsyncAction ()
+@implementation STStateAction
 
-@property (nonatomic, copy) STStateAsyncActionBlock actionBlock;
-
-@end
-
-@implementation STStateAsyncAction
-
-- (void)setAction:(STStateAsyncActionBlock)action
-{
-    self.actionBlock = action;
-}
-
-- (void)execute
-{
-    if (self.actionBlock)
-    {
-        self.actionBlock(self);
-    }
-}
+#pragma mark - Public methods
 
 - (void)resume
 {
     if (self.isFinalState)
     {
-        [self.workflow finalStateReached];
+        [self.container finalStateReached];
     }
     else
     {
-        [self.workflow execute:self.nextState];
+        [self.container execute:self.nextState];
+    }
+}
+
+#pragma mark - STState methods
+
+- (void)execute
+{
+    if (self.asyncAction)
+    {
+        self.asyncAction(self);
+    }
+    else if (self.action)
+    {
+        self.action();
+        [self resume];
+    }
+    else
+    {
+        [self.container finalStateReached];
     }
 }
 
@@ -78,9 +80,9 @@
 
 - (NSString*)descriptionWithShift:(NSString*)shift prefix:(NSString*)prefix siblingPrefix:(NSString*)siblingPrefix
 {
-    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (AA)", shift, prefix, self.name];
+    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (A)", shift, prefix, self.name];
     
-    if (!self.isFinalState && [self.workflow shouldDescribeNextStatesOfState:self])
+    if (!self.isFinalState && [self.container shouldDescribeNextStatesOfState:self])
     {
         [string appendString:@"\n"];
         [string appendString:[self.nextState descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"" siblingPrefix:@""]?:@""];

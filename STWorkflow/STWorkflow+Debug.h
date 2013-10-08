@@ -88,13 +88,13 @@
  *
  *	@return	A boolean that indicate if the current state is a STStateSyncAction.
  */
-- (BOOL)isSyncAction;
+- (BOOL)isAction;
 
 /**
  *	Return a boolean that indicate if the current state is a STStateAsyncAction.
  *
  *	@return	A boolean that indicate if the current state is a STStateAsyncAction.
  */
-- (BOOL)isAsyncAction;
+- (BOOL)isDispatch;
 
 @end

@@ -31,43 +31,45 @@
 #import "STStateSimpleCondition.h"
 #import "STState_private.h"
 
-@interface STStateSimpleCondition ()
-
-@property (nonatomic, copy) STStateSimpleConditionBlock conditionBlock;
-
-@end
-
 @implementation STStateSimpleCondition
 
-- (void)setCondition:(STStateSimpleConditionBlock)condition
-{
-    self.conditionBlock = condition;
-}
+#pragma mark - Public methods
 
-- (void)execute
+- (void)resumeWithSuccess:(BOOL)success
 {
-    if (self.conditionBlock)
+    if (self.isFinalState)
     {
-        BOOL result = self.conditionBlock();
-        if (self.isFinalState)
-        {
-            [self.workflow finalStateReached];
-        }
-        else
-        {
-            if (result)
-            {
-                [self.workflow execute:self.successState];
-            }
-            else
-            {
-                [self.workflow execute:self.failureState];
-            }
-        }
+        [self.container finalStateReached];
     }
     else
     {
-        [self.workflow finalStateReached];
+        if (success)
+        {
+            [self.container execute:self.successState];
+        }
+        else
+        {
+            [self.container execute:self.failureState];
+        }
+    }
+}
+
+#pragma mark - STState methods
+
+- (void)execute
+{
+    if (self.asyncCondition)
+    {
+        self.asyncCondition(self);
+    }
+    else if (self.condition)
+    {
+        BOOL success = self.condition();
+        [self resumeWithSuccess:success];
+    }
+    else
+    {
+        [self.container finalStateReached];
     }
 }
 
@@ -90,9 +92,9 @@
 
 - (NSString*)descriptionWithShift:(NSString*)shift prefix:(NSString*)prefix siblingPrefix:(NSString*)siblingPrefix
 {
-    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (SC)", shift, prefix, self.name];
+    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (S)", shift, prefix, self.name];
     
-    if (!self.isFinalState && [self.workflow shouldDescribeNextStatesOfState:self])
+    if (!self.isFinalState && [self.container shouldDescribeNextStatesOfState:self])
     {
         [string appendString:@"\n"];
         [string appendString:[self.successState descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"Y- " siblingPrefix:@"|  "]?:@""];

@@ -1,8 +1,8 @@
 //
-//  STWorkflow_private.h
+//  STStateDispatch.h
 //  STWorkflow
 //
-//  Created by Thomas Dupont on 02/08/13.
+//  Created by Thomas Dupont on 08/10/13.
 
 /***********************************************************************************
  *
@@ -28,18 +28,15 @@
  *
  ***********************************************************************************/
 
-#import "STWorkflow.h"
+#import "STState.h"
 
-@interface STWorkflow ()
+#import "STStateFactory.h"
 
-@property (nonatomic, strong) NSMutableSet* states;
-@property (nonatomic, strong) STState* firstState;
-@property (nonatomic, strong) STState* currentState;
-@property (nonatomic, assign) BOOL running;
-@property (nonatomic, strong) NSMutableSet* describedStates;
+@interface STStateDispatch : STState <STStateFactory>
 
-- (void)execute:(STState*)state;
-- (void)finalStateReached;
-- (BOOL)shouldDescribeNextStatesOfState:(STState*)state;
+/**
+ *  The state the workflow will continue on as soon as all the dispatched actions are done.
+ */
+@property (nonatomic, weak) STState* nextState;
 
 @end

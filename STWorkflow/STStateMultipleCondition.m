@@ -33,16 +33,25 @@
 
 @interface STStateMultipleCondition ()
 
-@property (nonatomic, copy) STStateMultipleConditionBlock conditionBlock;
 @property (nonatomic, strong) NSMutableDictionary* nextStates;
 
 @end
 
 @implementation STStateMultipleCondition
 
-- (void)setCondition:(STStateMultipleConditionBlock)condition
+#pragma mark - Public methods
+
+- (void)resumeWithKey:(NSString*)key
 {
-    self.conditionBlock = condition;
+    if (self.isFinalState)
+    {
+        [self.container finalStateReached];
+    }
+    else
+    {
+        STState* state = [self.nextStates objectForKey:key];
+        [self.container execute:state];
+    }
 }
 
 - (void)setNextState:(STState*)state forKey:(NSString*)key
@@ -55,24 +64,22 @@
     [self.nextStates setObject:state forKey:key];
 }
 
+#pragma mark - STState methods
+
 - (void)execute
 {
-    if (self.conditionBlock)
+    if (self.asyncCondition)
     {
-        NSString* key = self.conditionBlock();
-        if (self.isFinalState)
-        {
-            [self.workflow finalStateReached];
-        }
-        else
-        {
-            STState* state = [self.nextStates objectForKey:key];
-            [self.workflow execute:state];
-        }
+        self.asyncCondition(self);
     }
-    else if (self.isFinalState)
+    else if (self.condition)
     {
-        [self.workflow finalStateReached];
+        NSString* key = self.condition();
+        [self resumeWithKey:key];
+    }
+    else
+    {
+        [self.container finalStateReached];
     }
 }
 
@@ -100,9 +107,9 @@
 
 - (NSString*)descriptionWithShift:(NSString*)shift prefix:(NSString*)prefix siblingPrefix:(NSString*)siblingPrefix
 {
-    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (MC)", shift, prefix, self.name];
+    NSMutableString* string = [[NSMutableString alloc] initWithFormat:@"%@%@%@ (M)", shift, prefix, self.name];
     
-    if (!self.isFinalState && [self.workflow shouldDescribeNextStatesOfState:self])
+    if (!self.isFinalState && [self.container shouldDescribeNextStatesOfState:self])
     {
         [string appendString:@"\n"];
         for (STState* state in [self.nextStates allValues])

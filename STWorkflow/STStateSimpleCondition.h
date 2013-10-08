@@ -30,7 +30,10 @@
 
 #import "STState.h"
 
+@class STStateSimpleCondition;
+
 typedef BOOL(^STStateSimpleConditionBlock)(void);
+typedef void(^STStateSimpleConditionAsyncBlock)(STStateSimpleCondition*);
 
 @interface STStateSimpleCondition : STState
 
@@ -40,7 +43,28 @@ typedef BOOL(^STStateSimpleConditionBlock)(void);
  *
  *	@param	condition	the block that will be executed to choose the next state.
  */
+@property (nonatomic, copy) STStateSimpleConditionBlock condition;
 - (void)setCondition:(STStateSimpleConditionBlock)condition;
+
+/**
+ *	Set the condition block of the state.
+ *  You have to call the resumeWithSuccess method, on the state in parameter, as soon as your async operation is done.
+ *
+ *  @see resumeWithSuccess:
+ *
+ *	@param	condition	the block that will be executed to choose the next state.
+ */
+@property (nonatomic, copy) STStateSimpleConditionAsyncBlock asyncCondition;
+- (void)setAsyncCondition:(STStateSimpleConditionAsyncBlock)condition;
+
+/**
+ *  You have to call this method if have set an async condition as soon as that async operation is done.
+ *
+ *  @see setAsyncCondition:
+ *
+ *  @param success YES if you want to continue on the success state, NO for the failure state.
+ */
+- (void)resumeWithSuccess:(BOOL)success;
 
 /**
  *	The state the workflow will continue on if the condition's result is YES.

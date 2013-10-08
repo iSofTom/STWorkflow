@@ -29,12 +29,13 @@
  ***********************************************************************************/
 
 #import "STState.h"
-#import "STWorkflow_private.h"
+
+#import "STStateContainer.h"
 
 @interface STState ()
 
 @property (nonatomic, strong) NSString* name;
-@property (nonatomic, weak) STWorkflow* workflow;
+@property (nonatomic, weak) id<STStateContainer> container;
 @property (nonatomic, assign) BOOL isFinalState;
 
 + (instancetype)stateNamed:(NSString*)name;
