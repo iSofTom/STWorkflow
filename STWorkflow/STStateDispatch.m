@@ -94,6 +94,7 @@
         [NSException raise:@"STWorkflowException" format:@"Try to execute a nil state"];
     }
     
+    [state setContainer:self];
     [state execute];
 }
 
