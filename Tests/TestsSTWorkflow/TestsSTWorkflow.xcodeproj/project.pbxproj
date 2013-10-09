@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9A4411D718044A42004EF15A /* STStateDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411D618044A42004EF15A /* STStateDispatch.m */; };
 		9A4411DB18044B99004EF15A /* STStateAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411DA18044B99004EF15A /* STStateAction.m */; };
+		9A4411DF180544D2004EF15A /* LinkTopLeftToBottomRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411DE180544D2004EF15A /* LinkTopLeftToBottomRight.m */; };
+		9A4411E2180544E4004EF15A /* LinkTopRightToBottomLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4411E1180544E4004EF15A /* LinkTopRightToBottomLeft.m */; };
+		9A4411E4180546AB004EF15A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4411E3180546AB004EF15A /* QuartzCore.framework */; };
 		9A59420917AC5DF2005CC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420817AC5DF2005CC678 /* UIKit.framework */; };
 		9A59420B17AC5DF2005CC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420A17AC5DF2005CC678 /* Foundation.framework */; };
 		9A59420D17AC5DF2005CC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */; };
@@ -54,6 +57,12 @@
 		9A4411D918044B99004EF15A /* STStateAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStateAction.h; sourceTree = "<group>"; };
 		9A4411DA18044B99004EF15A /* STStateAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStateAction.m; sourceTree = "<group>"; };
 		9A4411DC1804541E004EF15A /* STStateFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STStateFactory.h; sourceTree = "<group>"; };
+		9A4411DD180544D2004EF15A /* LinkTopLeftToBottomRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkTopLeftToBottomRight.h; sourceTree = "<group>"; };
+		9A4411DE180544D2004EF15A /* LinkTopLeftToBottomRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkTopLeftToBottomRight.m; sourceTree = "<group>"; };
+		9A4411E0180544E4004EF15A /* LinkTopRightToBottomLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkTopRightToBottomLeft.h; sourceTree = "<group>"; };
+		9A4411E1180544E4004EF15A /* LinkTopRightToBottomLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkTopRightToBottomLeft.m; sourceTree = "<group>"; };
+		9A4411E3180546AB004EF15A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A4411E518055210004EF15A /* STWorkflow_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STWorkflow_private.h; sourceTree = "<group>"; };
 		9A59420517AC5DF2005CC678 /* TestsSTWorkflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestsSTWorkflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59420817AC5DF2005CC678 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A59420A17AC5DF2005CC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4411E4180546AB004EF15A /* QuartzCore.framework in Frameworks */,
 				9A59420917AC5DF2005CC678 /* UIKit.framework in Frameworks */,
 				9A59420B17AC5DF2005CC678 /* Foundation.framework in Frameworks */,
 				9A59420D17AC5DF2005CC678 /* CoreGraphics.framework in Frameworks */,
@@ -136,6 +146,7 @@
 		9A59420717AC5DF2005CC678 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A4411E3180546AB004EF15A /* QuartzCore.framework */,
 				9A59420817AC5DF2005CC678 /* UIKit.framework */,
 				9A59420A17AC5DF2005CC678 /* Foundation.framework */,
 				9A59420C17AC5DF2005CC678 /* CoreGraphics.framework */,
@@ -153,6 +164,10 @@
 				9A59422117AC5DF2005CC678 /* ViewController.m */,
 				9A59422317AC5DF2005CC678 /* ViewController.xib */,
 				9A59420F17AC5DF2005CC678 /* Supporting Files */,
+				9A4411DD180544D2004EF15A /* LinkTopLeftToBottomRight.h */,
+				9A4411DE180544D2004EF15A /* LinkTopLeftToBottomRight.m */,
+				9A4411E0180544E4004EF15A /* LinkTopRightToBottomLeft.h */,
+				9A4411E1180544E4004EF15A /* LinkTopRightToBottomLeft.m */,
 			);
 			path = TestsSTWorkflow;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 				9A4411D618044A42004EF15A /* STStateDispatch.m */,
 				9A59424F17AC5DFE005CC678 /* STWorkflow+Debug.h */,
 				9A59425017AC5DFE005CC678 /* STWorkflow+Debug.m */,
+				9A4411E518055210004EF15A /* STWorkflow_private.h */,
 			);
 			name = STWorkflow;
 			path = ../../STWorkflow;
@@ -327,6 +343,8 @@
 			files = (
 				9A59421517AC5DF2005CC678 /* main.m in Sources */,
 				9A59421917AC5DF2005CC678 /* AppDelegate.m in Sources */,
+				9A4411DF180544D2004EF15A /* LinkTopLeftToBottomRight.m in Sources */,
+				9A4411E2180544E4004EF15A /* LinkTopRightToBottomLeft.m in Sources */,
 				9A59422217AC5DF2005CC678 /* ViewController.m in Sources */,
 				9A59425417AC5DFE005CC678 /* STState.m in Sources */,
 				9A4411DB18044B99004EF15A /* STStateAction.m in Sources */,

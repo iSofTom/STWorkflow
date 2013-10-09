@@ -22,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *action1Label;
 @property (weak, nonatomic) IBOutlet UILabel *action2Label;
 @property (weak, nonatomic) IBOutlet UILabel *action3Label;
+@property (weak, nonatomic) IBOutlet UILabel *dispatchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dispatched1Label;
+@property (weak, nonatomic) IBOutlet UILabel *dispatched2Label;
 
 @property (nonatomic, strong) STWorkflow* workflow;
 
@@ -55,6 +58,9 @@
     STStateAction* downloadConf = [workflow createActionNamed:@"Download Config"];
     STStateMultipleCondition* condition = [workflow createMultipleConditionNamed:@"Condition"];
     STStateAction* action1 = [workflow createActionNamed:@"Action 1"];
+    STStateDispatch* dispatch = [workflow createDispatchNamed:@"Dispatch"];
+    STStateAction* dispatched1 = [dispatch createActionNamed:@"Dispatched 1"];
+    STStateAction* dispatched2 = [dispatch createActionNamed:@"Dispatched 2"];
     STStateAction* action2 = [workflow createActionNamed:@"Action 2"];
     STStateAction* action3 = [workflow createActionNamed:@"Action 3"];
     STStateAction* finalState = [workflow createActionNamed:@"Final state"];
@@ -91,8 +97,9 @@
     // Action 1
     [action1 setAction:^{
         [self.action1Label setTextColor:[UIColor redColor]];
+        [self.dispatchLabel setTextColor:[UIColor redColor]];
     }];
-    [action1 setNextState:finalState];
+    [action1 setNextState:dispatch];
     
     // Action 2
     [action2 setAction:^{
@@ -105,6 +112,26 @@
         [self.action3Label setTextColor:[UIColor redColor]];
     }];
     [action3 setNextState:finalState];
+    
+    [dispatch setNextState:finalState];
+    
+    [dispatched1 setAsyncAction:^(STStateAction *currentAction) {
+        [self.dispatched1Label setTextColor:[UIColor blueColor]];
+        [self downloadWithCompletion:^{
+            [self.dispatched1Label setTextColor:[UIColor redColor]];
+            [currentAction resume];
+        }];
+    }];
+    [dispatched1 flagAsFinalState];
+    
+    [dispatched2 setAsyncAction:^(STStateAction *currentAction) {
+        [self.dispatched2Label setTextColor:[UIColor blueColor]];
+        [self downloadWithCompletion:^{
+            [self.dispatched2Label setTextColor:[UIColor redColor]];
+            [currentAction resume];
+        }];
+    }];
+    [dispatched2 flagAsFinalState];
     
     // Final state
     [finalState setAction:^{
@@ -124,6 +151,9 @@
     [self.action1Label setTextColor:[UIColor blackColor]];
     [self.action2Label setTextColor:[UIColor blackColor]];
     [self.action3Label setTextColor:[UIColor blackColor]];
+    [self.dispatchLabel setTextColor:[UIColor blackColor]];
+    [self.dispatched1Label setTextColor:[UIColor blackColor]];
+    [self.dispatched2Label setTextColor:[UIColor blackColor]];
     
     [self.workflow start];
 }

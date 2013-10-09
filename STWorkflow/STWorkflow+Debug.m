@@ -29,8 +29,8 @@
  ***********************************************************************************/
 
 #import "STWorkflow+Debug.h"
-
 #import "STWorkflow_private.h"
+
 #import "STState_private.h"
 
 @implementation STWorkflow (Debug)

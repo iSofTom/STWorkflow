@@ -29,19 +29,9 @@
  ***********************************************************************************/
 
 #import "STWorkflow.h"
+#import "STWorkflow_private.h"
 
 #import "STState_private.h"
-#import "STStateContainer.h"
-
-@interface STWorkflow () <STStateContainer>
-
-@property (nonatomic, strong) NSMutableSet* states;
-@property (nonatomic, strong) STState* firstState;
-@property (nonatomic, strong) STState* currentState;
-@property (nonatomic, assign) BOOL running;
-@property (nonatomic, strong) NSMutableSet* describedStates;
-
-@end
 
 @implementation STWorkflow
 

@@ -157,7 +157,13 @@
     if (!self.isFinalState && [self.container shouldDescribeNextStatesOfState:self])
     {
         [string appendString:@"\n"];
-        [string appendString:[self.nextState descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"|- " siblingPrefix:@"|  "]?:@""];
+        
+        for (STState* state in self.states)
+        {
+            [string appendString:[state descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"|- " siblingPrefix:@"|  "]?:@""];
+        }
+        
+        [string appendString:[self.nextState descriptionWithShift:[shift stringByAppendingString:siblingPrefix] prefix:@"" siblingPrefix:@""]?:@""];
     }
     else
     {
