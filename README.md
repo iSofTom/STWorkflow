@@ -150,5 +150,5 @@ An exclamation point indicate a final state and an asterisk indicate a state tha
 
 ## Installation
 
-To include this component in your project, I recommend you to use [Cocoapods](http://cocoapods.org):
+To include this component in your project, I recommend you to use [CocoaPods](http://cocoapods.org):
 * Add `pod "STWorkflow"` to your Podfile.
